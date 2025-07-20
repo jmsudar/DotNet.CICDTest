@@ -1,0 +1,41 @@
+name: .NET Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      update_version:
+        description: 'Update version (creates a new release)'
+        required: false
+        type: boolean
+        default: false
+      custom_tags:
+        description: 'Custom package tags (comma-separated)'
+        required: false
+        default: ''
+      custom_description:
+        description: 'Custom package description'
+        required: false
+        default: ''
+
+jobs:
+  build-and-test:
+    # Skip if push event with [skip cd] in commit message
+    if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip cd]')"
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Run .NET CI Action
+        uses: jmsudar/dotnet-continuous-deployment@jms-integrate-test-repo
+        with: 
+          package-id: '${{ github.repository_owner }}.${{ github.event.repository.name }}'
+          author: ${{ github.repository_owner }}
+          repository-url: 'git@github.com:${{ github.repository }}.git'
+          package-tags: ${{ github.event.inputs.custom_tags || 'utility,test,automation' }} 
+          license: 'GPL-3.0-or-later'
+          update_version: ${{ github.event_name == 'push' && true || github.event.inputs.update_version }}
+
