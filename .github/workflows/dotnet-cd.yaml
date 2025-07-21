@@ -32,6 +32,7 @@ jobs:
       - name: Run .NET CI Action
         uses: jmsudar/dotnet-continuous-deployment@jms-integrate-test-repo
         with: 
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           package-id: '${{ github.repository_owner }}.${{ github.event.repository.name }}'
           author: ${{ github.repository_owner }}
           repository-url: 'git@github.com:${{ github.repository }}.git'
