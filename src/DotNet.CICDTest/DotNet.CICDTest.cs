@@ -26,7 +26,7 @@
         public static int Add(int a, int b)
         {
             // To test presentation of errors, comment out the line below so that a value is not returned
-            return a + b;
+            //return a + b;
         }
 
         /// <summary>
