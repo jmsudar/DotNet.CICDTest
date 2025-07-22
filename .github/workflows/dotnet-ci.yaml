@@ -9,3 +9,5 @@ jobs:
     steps:
       - name: Run .NET CI Action
         uses: jmsudar/dotnet-continuous-integration@jms-integrate-test-repo
+        with:
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
