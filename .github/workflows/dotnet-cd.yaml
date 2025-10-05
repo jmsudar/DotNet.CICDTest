@@ -21,7 +21,7 @@ on:
         default: ''
 
 jobs:
-  build-and-test:
+  publish:
     # Skip if push event with [skip cd] in commit message
     if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip cd]')"
     permissions:
