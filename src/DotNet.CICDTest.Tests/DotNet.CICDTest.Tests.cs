@@ -17,10 +17,10 @@ namespace DotNet.CICDTest.Tests
         public void TestGetGreeting()
         {
             // Arrange, successful test case
-            // string expected = "Hello, World!";
+            string expected = "Hello, World!";
 
             // Arrange, failure test case
-            string expected = "Hello, Universe!";
+            // string expected = "Hello, Universe!";
 
             // Act
             string actual = TestMethods.GetGreeting();
