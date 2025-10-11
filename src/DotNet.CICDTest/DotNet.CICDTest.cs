@@ -12,7 +12,7 @@
         public static string GetGreeting()
         {
             // To test presentation of warnings, uncomment the line below to set an unused variable
-            // string unusedVariable = "This variable is not used anywhere";
+            string unusedVariable = "This variable is not used anywhere";
 
             return "Hello, World!";
         }
@@ -38,7 +38,7 @@
         public static string Concat(string str1, string str2)
         {
             // To test a second error, also comment out the line below so that a value is not returned
-            // return $"{str1} {str2}";
+            return $"{str1} {str2}";
         }
     }
 }
