@@ -12,7 +12,7 @@
         public static string GetGreeting()
         {
             // To test presentation of warnings, uncomment the line below to set an unused variable
-            string unusedVariable = "This variable is not used anywhere";
+            // string unusedVariable = "This variable is not used anywhere";
 
             return "Hello, World!";
         }
@@ -26,7 +26,7 @@
         public static int Add(int a, int b)
         {
             // To test presentation of errors, comment out the line below so that a value is not returned
-            //return a + b;
+            return a + b;
         }
 
         /// <summary>
